@@ -20,6 +20,7 @@ import { Song } from './songs/song.entity';
       database: 'music_app',      // database name
       entities: [Song],           // data
       synchronize: true,
+      url: process.env.DATABASE_URL,
     }),
     SongsModule,
   ],
