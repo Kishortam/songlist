@@ -7,16 +7,31 @@ const Home = () => {
   const [type, setType] = useState('')
 
   // fetch songs
+  // const fetchSongs = async () => {
+  //   const res = await axios.get('http://localhost:4000/songs', {
+  //     params: { query, type },
+  //   })
+  //   setSongs(res.data)
+  // }
+
+  // for deployment, after backend deployed
   const fetchSongs = async () => {
-    const res = await axios.get('http://localhost:4000/songs', {
+    const res = await axios.get('https://music-app-backend-t9xa.onrender.com/songs', {
       params: { query, type },
     })
     setSongs(res.data)
   }
 
   // toggle favorite
+  // const toggleFavorite = async (id: number) => {
+  //   await axios.patch(`http://localhost:4000/songs/${id}/favorite`)
+  //   fetchSongs()
+  // }
+
+
+  // for deployment, after backend deployed
   const toggleFavorite = async (id: number) => {
-    await axios.patch(`http://localhost:4000/songs/${id}/favorite`)
+    await axios.patch(`https://music-app-backend-t9xa.onrender.com/songs/${id}/favorite`)
     fetchSongs()
   }
 
