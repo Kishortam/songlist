@@ -13,11 +13,13 @@ import { Song } from './songs/song.entity';
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'postgres',       // change to your postgres username
-      password: 'kishor@1996',    // password you mentioned on postgres
-      database: 'music_app',      // database name
+      // host: 'localhost',
+      // port: 5432,
+      // username: 'postgres',       // change to your postgres username
+      // password: 'kishor@1996',    // password you mentioned on postgres
+      // database: 'music_app',     // database name
+      url: process.env.DATABASE_URL,   // change to your postgres url
+      autoLoadEntities: true,
       entities: [Song],           // data
       synchronize: true,
     }),
